@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
+using MySql.Data.MySqlClient;
 
 namespace GunaProjekt
 {
@@ -15,6 +17,7 @@ namespace GunaProjekt
         public loginin()
         {
             InitializeComponent();
+
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -41,10 +44,67 @@ namespace GunaProjekt
         {
 
         }
+        static string constrig = ("Data Source=localhost;port=3306;username=root;password=");
+        static MySqlConnection con = new MySqlConnection(constrig);
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                string query = "SELECT u_name, u_password FROM _sample.soci_users where u_name = '" + guna2TextBox1.Text + "'";
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                MySqlDataReader sdr = cmd.ExecuteReader();
+                if (guna2TextBox1.Text == "" && guna2TextBox2.Text == "")
+                {
+                    label3.ForeColor = Color.White;
+                    label5.ForeColor = Color.White;
+                    label6.ForeColor = Color.White;
+                    label3.ForeColor = Color.Red;
+                }
+                else
+                {
+                    if (sdr.HasRows)
+                    {
+                        sdr.Read();
 
+                        if (sdr["u_password"].Equals(guna2TextBox2.Text))
+                        {
+                            //MessageBox.Show("Login Successfull...", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                            var Dashboardform = new Dashboard();
+                            Dashboardform.Closed += (s, args) => this.Close();
+                            Dashboardform.Show();
+                        }
+                        else
+                        {
+                            //MessageBox.Show("Invalid Password...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            label3.ForeColor = Color.White;
+                            label5.ForeColor = Color.White;
+                            label6.ForeColor = Color.White;
+                            label6.ForeColor = Color.Red;
+                        }
+                    }
+
+                    else
+                    {
+                        //MessageBox.Show("Username is incorrect...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        label3.ForeColor = Color.White;
+                        label5.ForeColor = Color.White;
+                        label6.ForeColor = Color.White;
+                        label5.ForeColor = Color.Red;
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                con.Close();
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -77,9 +137,13 @@ namespace GunaProjekt
 
         }
 
+
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            var registerinform = new registerin();
+            registerinform.Closed += (s, args) => this.Close();
+            registerinform.Show();
         }
 
         private void guna2TextBox3_TextChanged_1(object sender, EventArgs e)
@@ -94,7 +158,76 @@ namespace GunaProjekt
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            this.
+
+        }
+
+        private void guna2PictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox3_Click_1(object sender, EventArgs e)
+        {
+     
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            var registerinform = new registerin();
+            registerinform.Closed += (s, args) => this.Close();
+            registerinform.Show();
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            label5.ForeColor = Color.White;
+            //meno
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            label6.ForeColor = Color.White;
+            //udaje
+        }
+
+        private void label3_Click_2(object sender, EventArgs e)
+        {
+            label3.ForeColor = Color.White;
+            //heslo
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            var loadingform = new Loading();
+            loadingform.Closed += (s, args) => this.Close();
+            loadingform.Show();
         }
     }
 }
