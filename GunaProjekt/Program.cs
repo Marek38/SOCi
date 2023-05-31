@@ -16,6 +16,7 @@ namespace GunaProjekt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Login loginin = new loginin();  
             Application.Run(new loginin());
         }
     }

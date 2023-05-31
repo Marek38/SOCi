@@ -109,6 +109,7 @@ namespace GunaProjekt
                             label5.ForeColor = Color.White;
                             label7.ForeColor = Color.White;
                             label6.ForeColor = Color.White;
+                            
                             string password = guna2TextBox5.Text;
                             int passwordlenght = password.Length;
                             if (passwordlenght < 8)
@@ -137,7 +138,7 @@ namespace GunaProjekt
                                 }
                                 else
                                 {
-                                    sdrrr.Close();
+                                    
                                     label1.ForeColor = Color.White;
                                     label2.ForeColor = Color.White;
                                     label4.ForeColor = Color.White;
@@ -150,11 +151,11 @@ namespace GunaProjekt
                                     string vali_mail = guna2TextBox6.Text;
                                     string vali_projekt = guna2TextBox1.Text;
                                     string vali_password = guna2TextBox5.Text;
-                                    string upattern = @"^[a-zA-Z0-9]+$";
+                                    string n_pattern = @"^[a-zA-Z0-9]+$";
                                     string e_pattern1 = @"^[a-zA-Z0-9]+.[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z]{2,}$";
                                     string e_pattern2 = @"^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z]{2,}$";
 
-                                    if (Regex.IsMatch(vali_name, upattern))
+                                    if (Regex.IsMatch(vali_name, n_pattern))
                                     {
                                         if ((Regex.IsMatch(vali_mail, e_pattern1)) || (Regex.IsMatch(vali_mail, e_pattern2)))
                                         {
@@ -162,21 +163,25 @@ namespace GunaProjekt
                                             string vklad_query = "INSERT INTO _sample.soci_users(u_name,u_mail,u_projekt,u_password) VALUES('" + vali_name + "', '" + vali_mail + "', '" + vali_projekt + "', '" + vali_password + "');";
                                             MySqlCommand cmmd = new MySqlCommand(vklad_query, conn);
                                             MySqlDataReader sdrrrr = cmmd.ExecuteReader();
+                                            sdrrrr.Close();
                                         }
                                         else
                                         {
+                                            
                                             MessageBox.Show("zle ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         }
                                     }
                                     
                                     else
                                     {
+                                        
                                         MessageBox.Show("cele zle ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
                                 }
                             }
                         }
                         conn.Close();
+                        
 
 
                     }
@@ -245,6 +250,16 @@ namespace GunaProjekt
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerin_Load(object sender, EventArgs e)
         {
 
         }

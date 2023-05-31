@@ -47,22 +47,19 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2CheckBox9 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2CheckBox8 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2CheckBox7 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2CheckBox6 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2CheckBox5 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2CheckBox4 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2CheckBox3 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.guna2CheckBox2 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.wadadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2Panel1.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSlider)).BeginInit();
@@ -333,6 +330,8 @@
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BorderRadius = 20;
+            this.guna2GradientPanel2.Controls.Add(this.label3);
+            this.guna2GradientPanel2.Controls.Add(this.label4);
             this.guna2GradientPanel2.Controls.Add(this.guna2GradientButton1);
             this.guna2GradientPanel2.Controls.Add(this.guna2TextBox1);
             this.guna2GradientPanel2.Controls.Add(this.label1);
@@ -343,6 +342,33 @@
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(773, 143);
             this.guna2GradientPanel2.TabIndex = 8;
+            this.guna2GradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel2_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.Color.Silver;
+            this.label3.Location = new System.Drawing.Point(31, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 17);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Tento task už je zadaný";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.ForeColor = System.Drawing.Color.LightGray;
+            this.label4.Location = new System.Drawing.Point(31, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 17);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Zadaj údaje";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // guna2GradientButton1
             // 
@@ -363,6 +389,7 @@
             this.guna2GradientButton1.Name = "guna2GradientButton1";
             this.guna2GradientButton1.Size = new System.Drawing.Size(75, 43);
             this.guna2GradientButton1.TabIndex = 10;
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // guna2TextBox1
             // 
@@ -416,217 +443,45 @@
             // 
             // guna2GradientPanel3
             // 
-            this.guna2GradientPanel3.Controls.Add(this.guna2CheckBox9);
-            this.guna2GradientPanel3.Controls.Add(this.guna2CheckBox8);
-            this.guna2GradientPanel3.Controls.Add(this.guna2CheckBox7);
-            this.guna2GradientPanel3.Controls.Add(this.guna2CheckBox6);
-            this.guna2GradientPanel3.Controls.Add(this.guna2CheckBox5);
-            this.guna2GradientPanel3.Controls.Add(this.guna2CheckBox4);
-            this.guna2GradientPanel3.Controls.Add(this.guna2CheckBox3);
+            this.guna2GradientPanel3.Controls.Add(this.label5);
             this.guna2GradientPanel3.Controls.Add(this.guna2CheckBox2);
-            this.guna2GradientPanel3.Controls.Add(this.guna2CheckBox1);
             this.guna2GradientPanel3.Location = new System.Drawing.Point(20, 67);
             this.guna2GradientPanel3.Name = "guna2GradientPanel3";
             this.guna2GradientPanel3.Size = new System.Drawing.Size(728, 359);
             this.guna2GradientPanel3.TabIndex = 16;
+            this.guna2GradientPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel3_Paint);
             // 
-            // guna2CheckBox9
+            // label5
             // 
-            this.guna2CheckBox9.AutoSize = true;
-            this.guna2CheckBox9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox9.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox9.CheckedState.BorderRadius = 0;
-            this.guna2CheckBox9.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox9.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox9.CheckMarkColor = System.Drawing.Color.CornflowerBlue;
-            this.guna2CheckBox9.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.guna2CheckBox9.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.guna2CheckBox9.Location = new System.Drawing.Point(13, 317);
-            this.guna2CheckBox9.Name = "guna2CheckBox9";
-            this.guna2CheckBox9.Size = new System.Drawing.Size(295, 34);
-            this.guna2CheckBox9.TabIndex = 34;
-            this.guna2CheckBox9.Text = "9. Finálne úpravy, bugfixing";
-            this.guna2CheckBox9.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox9.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox9.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox9.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox9.UseVisualStyleBackColor = false;
-            // 
-            // guna2CheckBox8
-            // 
-            this.guna2CheckBox8.AutoSize = true;
-            this.guna2CheckBox8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox8.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox8.CheckedState.BorderRadius = 0;
-            this.guna2CheckBox8.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox8.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox8.CheckMarkColor = System.Drawing.Color.CornflowerBlue;
-            this.guna2CheckBox8.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.guna2CheckBox8.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.guna2CheckBox8.Location = new System.Drawing.Point(13, 281);
-            this.guna2CheckBox8.Name = "guna2CheckBox8";
-            this.guna2CheckBox8.Size = new System.Drawing.Size(340, 34);
-            this.guna2CheckBox8.TabIndex = 33;
-            this.guna2CheckBox8.Text = "8. Backend druhej časti aplikácie";
-            this.guna2CheckBox8.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox8.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox8.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox8.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox8.UseVisualStyleBackColor = false;
-            // 
-            // guna2CheckBox7
-            // 
-            this.guna2CheckBox7.AutoSize = true;
-            this.guna2CheckBox7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox7.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox7.CheckedState.BorderRadius = 0;
-            this.guna2CheckBox7.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox7.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox7.CheckMarkColor = System.Drawing.Color.CornflowerBlue;
-            this.guna2CheckBox7.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.guna2CheckBox7.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.guna2CheckBox7.Location = new System.Drawing.Point(14, 247);
-            this.guna2CheckBox7.Name = "guna2CheckBox7";
-            this.guna2CheckBox7.Size = new System.Drawing.Size(327, 34);
-            this.guna2CheckBox7.TabIndex = 32;
-            this.guna2CheckBox7.Text = "7. Backend prvej časti aplikácie";
-            this.guna2CheckBox7.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox7.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox7.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox7.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox7.UseVisualStyleBackColor = false;
-            // 
-            // guna2CheckBox6
-            // 
-            this.guna2CheckBox6.AutoSize = true;
-            this.guna2CheckBox6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox6.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox6.CheckedState.BorderRadius = 0;
-            this.guna2CheckBox6.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox6.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox6.CheckMarkColor = System.Drawing.Color.CornflowerBlue;
-            this.guna2CheckBox6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.guna2CheckBox6.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.guna2CheckBox6.Location = new System.Drawing.Point(14, 207);
-            this.guna2CheckBox6.Name = "guna2CheckBox6";
-            this.guna2CheckBox6.Size = new System.Drawing.Size(393, 34);
-            this.guna2CheckBox6.TabIndex = 31;
-            this.guna2CheckBox6.Text = "6. Dizajn, layout aplikácie (druhá časť)";
-            this.guna2CheckBox6.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox6.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox6.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox6.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox6.UseVisualStyleBackColor = false;
-            // 
-            // guna2CheckBox5
-            // 
-            this.guna2CheckBox5.AutoSize = true;
-            this.guna2CheckBox5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox5.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox5.CheckedState.BorderRadius = 0;
-            this.guna2CheckBox5.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox5.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox5.CheckMarkColor = System.Drawing.Color.CornflowerBlue;
-            this.guna2CheckBox5.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.guna2CheckBox5.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.guna2CheckBox5.Location = new System.Drawing.Point(14, 167);
-            this.guna2CheckBox5.Name = "guna2CheckBox5";
-            this.guna2CheckBox5.Size = new System.Drawing.Size(381, 34);
-            this.guna2CheckBox5.TabIndex = 30;
-            this.guna2CheckBox5.Text = "5. Dizajn, layout aplikácie (prvá časť)";
-            this.guna2CheckBox5.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox5.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox5.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox5.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox5.UseVisualStyleBackColor = false;
-            // 
-            // guna2CheckBox4
-            // 
-            this.guna2CheckBox4.AutoSize = true;
-            this.guna2CheckBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox4.CheckedState.BorderRadius = 0;
-            this.guna2CheckBox4.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox4.CheckMarkColor = System.Drawing.Color.CornflowerBlue;
-            this.guna2CheckBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.guna2CheckBox4.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.guna2CheckBox4.Location = new System.Drawing.Point(14, 127);
-            this.guna2CheckBox4.Name = "guna2CheckBox4";
-            this.guna2CheckBox4.Size = new System.Drawing.Size(324, 34);
-            this.guna2CheckBox4.TabIndex = 29;
-            this.guna2CheckBox4.Text = "4. Backend pre login a register";
-            this.guna2CheckBox4.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox4.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox4.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox4.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox4.UseVisualStyleBackColor = false;
-            // 
-            // guna2CheckBox3
-            // 
-            this.guna2CheckBox3.AutoSize = true;
-            this.guna2CheckBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox3.CheckedState.BorderRadius = 0;
-            this.guna2CheckBox3.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox3.CheckMarkColor = System.Drawing.Color.CornflowerBlue;
-            this.guna2CheckBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.guna2CheckBox3.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.guna2CheckBox3.Location = new System.Drawing.Point(14, 87);
-            this.guna2CheckBox3.Name = "guna2CheckBox3";
-            this.guna2CheckBox3.Size = new System.Drawing.Size(301, 34);
-            this.guna2CheckBox3.TabIndex = 28;
-            this.guna2CheckBox3.Text = "3. Dizajn pre login a register";
-            this.guna2CheckBox3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox3.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox3.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox3.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox3.UseVisualStyleBackColor = false;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(176, 110);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(10, 13);
+            this.label5.TabIndex = 29;
+            this.label5.Text = " ";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // guna2CheckBox2
             // 
             this.guna2CheckBox2.AutoSize = true;
             this.guna2CheckBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CheckBox2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox2.CheckedState.BorderRadius = 0;
+            this.guna2CheckBox2.CheckedState.BorderRadius = 2;
             this.guna2CheckBox2.CheckedState.BorderThickness = 0;
             this.guna2CheckBox2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2CheckBox2.CheckMarkColor = System.Drawing.Color.CornflowerBlue;
-            this.guna2CheckBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.guna2CheckBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
             this.guna2CheckBox2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.guna2CheckBox2.Location = new System.Drawing.Point(14, 47);
+            this.guna2CheckBox2.Location = new System.Drawing.Point(179, 47);
             this.guna2CheckBox2.Name = "guna2CheckBox2";
-            this.guna2CheckBox2.Size = new System.Drawing.Size(373, 34);
-            this.guna2CheckBox2.TabIndex = 27;
-            this.guna2CheckBox2.Text = "2. Vytvorenie vývojového diagramu";
+            this.guna2CheckBox2.Size = new System.Drawing.Size(15, 14);
+            this.guna2CheckBox2.TabIndex = 28;
             this.guna2CheckBox2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox2.UncheckedState.BorderRadius = 0;
+            this.guna2CheckBox2.UncheckedState.BorderRadius = 2;
             this.guna2CheckBox2.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2CheckBox2.UseVisualStyleBackColor = false;
-            // 
-            // guna2CheckBox1
-            // 
-            this.guna2CheckBox1.AutoSize = true;
-            this.guna2CheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.CheckedState.BorderRadius = 0;
-            this.guna2CheckBox1.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.CheckMarkColor = System.Drawing.Color.CornflowerBlue;
-            this.guna2CheckBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.guna2CheckBox1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.guna2CheckBox1.Location = new System.Drawing.Point(14, 7);
-            this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(354, 34);
-            this.guna2CheckBox1.TabIndex = 26;
-            this.guna2CheckBox1.Text = "1. Návrh dizajnu, layoutu aplikácie";
-            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox1.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox1.UseVisualStyleBackColor = false;
+            this.guna2CheckBox2.CheckedChanged += new System.EventHandler(this.guna2CheckBox2_CheckedChanged);
             // 
             // label2
             // 
@@ -639,10 +494,31 @@
             this.label2.Size = new System.Drawing.Size(336, 47);
             this.label2.TabIndex = 15;
             this.label2.Text = "Projektový kalendár";
+            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // guna2ShadowForm1
             // 
             this.guna2ShadowForm1.TargetForm = this;
+            // 
+            // guna2ContextMenuStrip1
+            // 
+            this.guna2ContextMenuStrip1.Name = "guna2ContextMenuStrip1";
+            this.guna2ContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip1.RenderStyle.ColorTable = null;
+            this.guna2ContextMenuStrip1.RenderStyle.RoundedEdges = true;
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // wadadToolStripMenuItem
+            // 
+            this.wadadToolStripMenuItem.Name = "wadadToolStripMenuItem";
+            this.wadadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.wadadToolStripMenuItem.Text = "wadad";
             // 
             // Calendar
             // 
@@ -661,6 +537,7 @@
             this.Name = "Calendar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "calendar";
+            this.Load += new System.EventHandler(this.Calendar_Load_1);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgSlider)).EndInit();
@@ -702,14 +579,11 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox9;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox8;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox7;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox6;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox5;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox4;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox2;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem wadadToolStripMenuItem;
+        private System.Windows.Forms.Label label5;
     }
 }

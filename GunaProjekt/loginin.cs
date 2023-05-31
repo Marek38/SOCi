@@ -60,10 +60,10 @@ namespace GunaProjekt
                 MySqlDataReader sdr = cmd.ExecuteReader();
                 if (guna2TextBox1.Text == "" && guna2TextBox2.Text == "")
                 {
-                    label3.ForeColor = Color.White;
-                    label5.ForeColor = Color.White;
-                    label6.ForeColor = Color.White;
-                    label3.ForeColor = Color.Red;
+                    label4.ForeColor = Color.White;
+                    label7.ForeColor = Color.White;
+                    label8.ForeColor = Color.White;
+                    label4.ForeColor = Color.Red;
                 }
                 else
                 {
@@ -74,6 +74,7 @@ namespace GunaProjekt
                         if (sdr["u_password"].Equals(guna2TextBox2.Text))
                         {
                             //MessageBox.Show("Login Successfull...", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //userFullname = sdr["u_name"].ToString();
                             this.Hide();
                             var Dashboardform = new Dashboard();
                             Dashboardform.Closed += (s, args) => this.Close();
@@ -82,20 +83,20 @@ namespace GunaProjekt
                         else
                         {
                             //MessageBox.Show("Invalid Password...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            label3.ForeColor = Color.White;
-                            label5.ForeColor = Color.White;
-                            label6.ForeColor = Color.White;
-                            label6.ForeColor = Color.Red;
+                            label4.ForeColor = Color.White;
+                            label7.ForeColor = Color.White;
+                            label8.ForeColor = Color.White;
+                            label8.ForeColor = Color.Red;
                         }
                     }
 
                     else
                     {
                         //MessageBox.Show("Username is incorrect...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        label3.ForeColor = Color.White;
-                        label5.ForeColor = Color.White;
-                        label6.ForeColor = Color.White;
-                        label5.ForeColor = Color.Red;
+                        label4.ForeColor = Color.White;
+                        label7.ForeColor = Color.White;
+                        label8.ForeColor = Color.White;
+                        label7.ForeColor = Color.Red;
                     }
                     con.Close();
                 }
@@ -134,7 +135,14 @@ namespace GunaProjekt
 
         private void guna2ToggleSwitch1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (guna2ToggleSwitch1.Checked == true)
+            {
+                guna2TextBox2.PasswordChar = default;
+            }
+            else if (guna2ToggleSwitch1.Checked == false)
+            {
+                guna2TextBox2.PasswordChar = '●';
+            }
         }
 
 
@@ -223,6 +231,24 @@ namespace GunaProjekt
         }
 
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            var loadingform = new Loading();
+            loadingform.Closed += (s, args) => this.Close();
+            loadingform.Show();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked_2(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             var loadingform = new Loading();

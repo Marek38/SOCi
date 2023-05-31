@@ -23,6 +23,9 @@ namespace GunaProjekt
             if (guna2CircleProgressBar1.Value == 100)
             {
                 timer1.Stop();
+                Dashboard p = new Dashboard();
+                p.Show();
+                this.Hide();
             }
             else
             {
@@ -42,6 +45,11 @@ namespace GunaProjekt
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }

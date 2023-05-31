@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,14 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace GunaProjekt
 {
     public partial class Mail : Form
     {
+
         public Mail()
         {
             InitializeComponent();
+
         }
+
+
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -47,6 +53,26 @@ namespace GunaProjekt
         }
 
         private void guna2Panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Mail_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CirclePictureBox4_Click(object sender, EventArgs e)
         {
 
         }
