@@ -59,10 +59,7 @@ namespace GunaProjekt
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var mailform = new Mail();
-            mailform.Closed += (s, args) => this.Close();
-            mailform.Show();
+
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -104,6 +101,35 @@ namespace GunaProjekt
         }
 
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var ronnieform = new Ronnie();
+            ronnieform.Closed += (s, args) => this.Close();
+            ronnieform.Show();
+        }
+
+        private void guna2CirclePictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var adamform = new Adam();
+            adamform.Closed += (s, args) => this.Close();
+            adamform.Show();
+        }
+
+        private void guna2CirclePictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var tomasform = new Tomas();
+            tomasform.Closed += (s, args) => this.Close();
+            tomasform.Show();
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
 
         }

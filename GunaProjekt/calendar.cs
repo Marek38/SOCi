@@ -28,6 +28,8 @@ namespace GunaProjekt
         static MySqlConnection conn = new MySqlConnection(constrig);
         private object guna2CheckBox1;
 
+        public static string inTable;
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -126,7 +128,11 @@ namespace GunaProjekt
 
                         insertCmd.ExecuteNonQuery();
                         //insertCmmd.ExecuteNonQuery();
+
+                        string inTable = selectReader[taskName].ToString();
+                        MessageBox.Show("Value from the database: " + inTable);
                     }
+
                 }
             }
             catch (Exception)
@@ -174,9 +180,9 @@ namespace GunaProjekt
 
         private void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
- 
+
         }
- 
+
         private void label2_Click_1(object sender, EventArgs e)
         {
 
@@ -193,7 +199,7 @@ namespace GunaProjekt
         }
         private void Calendar_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Calendar_Load_1(object sender, EventArgs e)
@@ -203,27 +209,9 @@ namespace GunaProjekt
 
         private void guna2CheckBox1_CheckedChanged_1(object sender, EventArgs e)
         {
-            string constrig = "Data Source=localhost;port=3306;username=root;password=";
 
-            using (SqlConnection connection = new SqlConnection(constrig))
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM _sample.soci_task", connection);
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    // Získajte hodnoty z databázy
-                    bool isChecked = (bool)reader["soci_task"];
-
-                    // Priradte hodnoty k Guna CheckBoxu
-                    //guna2CheckBox1.Checked = isChecked;
-                }
-
-                reader.Close();
-                connection.Close();
-            }
         }
     }
+
 }
 

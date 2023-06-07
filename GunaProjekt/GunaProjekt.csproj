@@ -146,6 +146,24 @@
     <Compile Include="calendar.Designer.cs">
       <DependentUpon>calendar.cs</DependentUpon>
     </Compile>
+    <Compile Include="adam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adam.Designer.cs">
+      <DependentUpon>adam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ronnie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ronnie.Designer.cs">
+      <DependentUpon>ronnie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tomas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tomas.Designer.cs">
+      <DependentUpon>tomas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +203,12 @@
     <EmbeddedResource Include="calendar.resx">
       <DependentUpon>calendar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="adam.resx">
+      <DependentUpon>adam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ronnie.resx">
+      <DependentUpon>ronnie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="registerin.resx">
       <DependentUpon>registerin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tomas.resx">
+      <DependentUpon>tomas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="workflow.resx">
       <DependentUpon>workflow.cs</DependentUpon>
@@ -343,6 +370,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\online-meeting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adam3.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adam2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adam1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zajo1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zajo2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zajo3.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ronko1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ronko2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ronko3.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hourglass-29124_960_720.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
