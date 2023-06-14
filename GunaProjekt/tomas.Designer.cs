@@ -236,11 +236,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(11, 125);
+            this.label4.Location = new System.Drawing.Point(18, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(178, 30);
+            this.label4.Size = new System.Drawing.Size(165, 30);
             this.label4.TabIndex = 2;
-            this.label4.Text = "5 rokov učiteľom";
+            this.label4.Text = "2 roky učiteľom";
             // 
             // imgSlider
             // 

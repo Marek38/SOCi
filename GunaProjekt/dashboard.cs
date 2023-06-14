@@ -59,7 +59,10 @@ namespace GunaProjekt
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            var mailflowform = new Mail();
+            mailflowform.Closed += (s, args) => this.Close();
+            mailflowform.Show();
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -130,6 +133,79 @@ namespace GunaProjekt
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientButton1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
+                string taskName = guna2TextBox1.Text;
+                int taskChecked = 0;
+
+                if (string.IsNullOrEmpty(taskName))
+                {
+                    label10.ForeColor = Color.Silver;
+                    label11.ForeColor = Color.LightGray;
+                    label11.ForeColor = Color.Red;
+                }
+                else
+                {
+                    label10.ForeColor = Color.Silver;
+                    label11.ForeColor = Color.LightGray;
+
+                    string taskQuery = "SELECT u_task FROM _sample.soci_task WHERE u_task = '" + guna2TextBox1.Text + "'";
+                    MySqlCommand selectCmd = new MySqlCommand(taskQuery, conn);
+                    selectCmd.Parameters.AddWithValue("@taskName", taskName);
+
+                    MySqlDataReader selectReader = selectCmd.ExecuteReader();
+
+                    if (selectReader.HasRows)
+                    {
+                        selectReader.Close();
+                        label10.ForeColor = Color.Silver;
+                        label11.ForeColor = Color.LightGray;
+                        label10.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        selectReader.Close();
+
+                        string insertQuery = "INSERT INTO _sample.soci_task(u_task) VALUES('" + guna2TextBox1.Text + "'); ";
+                        MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
+                        insertCmd.Parameters.AddWithValue("@taskName", taskName);
+
+                        insertCmd.ExecuteNonQuery();
+
+                        string inTable = selectReader[taskName].ToString();
+                        MessageBox.Show("Value from the database: " + inTable);
+
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                conn.Close();
+                label10.ForeColor = Color.Silver;
+                label11.ForeColor = Color.LightGray;
+                //label4.ForeColor = Color.Red;
+                //MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
         {
 
         }

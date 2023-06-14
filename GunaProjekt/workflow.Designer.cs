@@ -721,6 +721,7 @@
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.AutoScroll = true;
+            this.guna2GradientPanel1.BorderRadius = 20;
             this.guna2GradientPanel1.Controls.Add(this.label1);
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Silver;

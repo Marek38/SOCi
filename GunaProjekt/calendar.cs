@@ -13,8 +13,8 @@ using System.Windows.Forms;
 using System.Xml;
 using Guna.UI2.WinForms;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Utilities.Collections;
-using static Org.BouncyCastle.Math.EC.ECCurve;
+
+
 
 namespace GunaProjekt
 {
@@ -26,9 +26,47 @@ namespace GunaProjekt
         }
         static string constrig = ("Data Source=localhost;port=3306;username=root;password=");
         static MySqlConnection conn = new MySqlConnection(constrig);
-        private object guna2CheckBox1;
 
         public static string inTable;
+
+
+        private void Calendar_Load(object sender, EventArgs e)
+        {
+            string constrig = ("Data Source=localhost;port=3306;username=root;password=");
+            MySqlConnection conn = new MySqlConnection(constrig);
+
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM _sample.soci_task ;", conn);
+            conn.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string taskName = reader.GetString(1);
+                guna2CheckBox2.Text = taskName;
+
+            }
+        }
+
+        public string GetDataFromDatabase()
+        {
+            string query = "SELECT * FROM _sample.soci_task; "; // Replace with your column and table names
+
+            using (MySqlConnection connection = new MySqlConnection(constrig))
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return result.ToString();
+                    }
+                }
+            }
+
+            return string.Empty; // Return empty string if no data found
+        }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -120,17 +158,14 @@ namespace GunaProjekt
                         selectReader.Close();
 
                         string insertQuery = "INSERT INTO _sample.soci_task(u_task) VALUES('" + guna2TextBox1.Text + "'); ";
-                        //string insert_chekedQuery = "INSERT INTO _sample.soci_task(u_checked) VALUES('" + taskChecked + "'); ";
                         MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
-                        //MySqlCommand insertCmmd = new MySqlCommand(insert_chekedQuery, conn);
                         insertCmd.Parameters.AddWithValue("@taskName", taskName);
-                        //insertCmmd.Parameters.AddWithValue("@taskName", 0);
 
                         insertCmd.ExecuteNonQuery();
-                        //insertCmmd.ExecuteNonQuery();
 
                         string inTable = selectReader[taskName].ToString();
                         MessageBox.Show("Value from the database: " + inTable);
+
                     }
 
                 }
@@ -140,7 +175,7 @@ namespace GunaProjekt
                 conn.Close();
                 label3.ForeColor = Color.Silver;
                 label3.ForeColor = Color.LightGray;
-                label4.ForeColor = Color.Red;
+                //label4.ForeColor = Color.Red;
                 //MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -178,8 +213,10 @@ namespace GunaProjekt
         {
         }
 
+
         private void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
+
 
         }
 
@@ -197,21 +234,59 @@ namespace GunaProjekt
         {
 
         }
-        private void Calendar_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void Calendar_Load_1(object sender, EventArgs e)
         {
+                MySqlCommand cmd = new MySqlCommand("SELECT u_task FROM _sample.soci_task; ", conn);
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
 
-        }
+
+                string taskName = reader.GetString(0);
+                    guna2CheckBox2.Text = taskName;
+
+                //string taskName2 = reader.GetString(1);
+                    //guna2CheckBox3.Text = taskName2;
+
+                //string taskName3 = reader.GetString(2);
+                   //guna2CheckBox4.Text = taskName3;
+
+            }
+            }
+   
 
         private void guna2CheckBox1_CheckedChanged_1(object sender, EventArgs e)
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_load(object sender, EventArgs e)
+        {
+        }
+
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CheckBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CheckBox4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+
 
 }
 
