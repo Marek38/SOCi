@@ -237,24 +237,54 @@ namespace GunaProjekt
 
         private void Calendar_Load_1(object sender, EventArgs e)
         {
+            conn.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT u_task FROM _sample.soci_task; ", conn);
-                conn.Open();
                 MySqlDataReader reader = cmd.ExecuteReader();
+                int y = 43;
                 while (reader.Read())
                 {
 
-
                 string taskName = reader.GetString(0);
-                    guna2CheckBox2.Text = taskName;
+                    //guna2CheckBox2.Text = taskName;
 
                 //string taskName2 = reader.GetString(1);
-                    //guna2CheckBox3.Text = taskName2;
+                //guna2CheckBox6.Text = taskName2;
+
+                Guna2CheckBox box = new Guna2CheckBox();
+                box.Text = taskName;
+                box.Parent = guna2GradientPanel3;
+                box.Location = new Point(28, y);
+                box.AutoSize = true;
+                guna2GradientPanel3.Controls.Add(box);
+                box.BringToFront();
+
+                Font font = new Font("Segoe UI Semibold", 15.75f, FontStyle.Bold);
+                box.Font = font;
+                box.ForeColor = Color.MidnightBlue;
+                //box.TabStop = true;
+                //box.TabIndex = 80;
+                //Controls.Add(box);
 
                 //string taskName3 = reader.GetString(2);
-                   //guna2CheckBox4.Text = taskName3;
+                //guna2CheckBox4.Text = taskName3;
+                y += 35;
+                
+                //if (box.Checked)
+                //{
+                  //  string insertQuery = "INSERT INTO _sample.soci_task(u_checked) VALUES('1')";
+                  //  MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
+                   // insertCmd.ExecuteNonQuery();
+                //}
+                //else{
+                  //  string insertQuery = "INSERT INTO _sample.soci_task(u_checked) VALUES('0')";
+                   // MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
+                    //insertCmd.ExecuteNonQuery();
+                //}
 
+               
             }
-            }
+            conn.Close();
+        }
    
 
         private void guna2CheckBox1_CheckedChanged_1(object sender, EventArgs e)
@@ -273,7 +303,7 @@ namespace GunaProjekt
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void guna2CheckBox3_CheckedChanged(object sender, EventArgs e)

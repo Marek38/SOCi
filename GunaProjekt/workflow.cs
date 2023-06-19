@@ -17,7 +17,11 @@ namespace GunaProjekt
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
+        }
+       
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -48,6 +52,11 @@ namespace GunaProjekt
         }
 
         private void guna2ProgressBar1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
         {
 
         }

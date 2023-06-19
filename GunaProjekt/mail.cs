@@ -148,6 +148,7 @@ namespace GunaProjekt
                         label4.ForeColor = Color.WhiteSmoke;
                         label5.ForeColor = Color.WhiteSmoke;
                         label4.ForeColor = Color.Red;
+                        conn.Close();
                     }
                     else
                     {
@@ -161,7 +162,7 @@ namespace GunaProjekt
 
                         string inTable = selectReader[taskName].ToString();
                         MessageBox.Show("Value from the database: " + inTable);
-
+                        conn.Close();
                         label4.ForeColor = Color.WhiteSmoke;
                         label5.ForeColor = Color.WhiteSmoke;
 
