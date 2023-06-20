@@ -90,7 +90,7 @@ namespace GunaProjekt
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void guna2GradientButton3_Click(object sender, EventArgs e)

@@ -36,15 +36,7 @@ namespace GunaProjekt
             MySqlConnection conn = new MySqlConnection(constrig);
 
 
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM _sample.soci_task ;", conn);
-            conn.Open();
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                string taskName = reader.GetString(1);
-                guna2CheckBox2.Text = taskName;
-
-            }
+           
         }
 
         public string GetDataFromDatabase()
@@ -303,7 +295,31 @@ namespace GunaProjekt
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
-            
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT u_task FROM _sample.soci_task; ", conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            int y = 43;
+            while (reader.Read())
+            {
+
+                string taskName = reader.GetString(0);
+
+                Guna2CheckBox box = new Guna2CheckBox();
+                box.Text = taskName;
+                box.Parent = guna2GradientPanel3;
+                box.Location = new Point(28, y);
+                box.AutoSize = true;
+                guna2GradientPanel3.Controls.Add(box);
+                box.BringToFront();
+
+                Font font = new Font("Segoe UI Semibold", 15.75f, FontStyle.Bold);
+                box.Font = font;
+                box.ForeColor = Color.MidnightBlue;
+                y += 35;
+
+
+            }
+            conn.Close();
         }
 
         private void guna2CheckBox3_CheckedChanged(object sender, EventArgs e)
@@ -314,6 +330,11 @@ namespace GunaProjekt
         private void guna2CheckBox4_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 
