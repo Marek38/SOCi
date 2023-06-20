@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,11 @@ namespace GunaProjekt
 {
     public partial class main_dashboard : Form
     {
+        public static main_dashboard Self;
         public main_dashboard()
         {
             InitializeComponent();
+            Self=this;
         }
 
         private void mainpanel_Paint(object sender, PaintEventArgs e)

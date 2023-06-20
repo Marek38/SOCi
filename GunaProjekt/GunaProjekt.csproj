@@ -167,6 +167,12 @@
     <Compile Include="adam.Designer.cs">
       <DependentUpon>adam.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zajdo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zajdo.Designer.cs">
+      <DependentUpon>Zajdo.cs</DependentUpon>
+    </Compile>
     <Compile Include="guna2CheckBox.cs" />
     <Compile Include="Guna\UI2\WinForms\guna2CheckBox.cs" />
     <Compile Include="main_dashboard.cs">
@@ -181,11 +187,11 @@
     <Compile Include="ronnie.Designer.cs">
       <DependentUpon>ronnie.cs</DependentUpon>
     </Compile>
-    <Compile Include="tomas.cs">
+    <Compile Include="teachers_dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="tomas.Designer.cs">
-      <DependentUpon>tomas.cs</DependentUpon>
+    <Compile Include="teachers_dashboard.Designer.cs">
+      <DependentUpon>teachers_dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
@@ -260,11 +266,14 @@
     <EmbeddedResource Include="registerin.resx">
       <DependentUpon>registerin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="tomas.resx">
-      <DependentUpon>tomas.cs</DependentUpon>
+    <EmbeddedResource Include="teachers_dashboard.resx">
+      <DependentUpon>teachers_dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="workflow.resx">
       <DependentUpon>workflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zajdo.resx">
+      <DependentUpon>Zajdo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>

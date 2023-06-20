@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 
@@ -24,13 +25,6 @@ namespace GunaProjekt
             static string constrig = ("Data Source=localhost;port=3306;username=root;password=");
             static MySqlConnection conn = new MySqlConnection(constrig);
 
-
-        private void moveImageBox(object sender)
-        {
-            //Guna2Button b = (Guna2Button)sender;
-            //imgSlider.Location = new Point(b.Location.X + 34, b.Location.Y - 25);
-            //imgSlider.SendToBack();
-        }
 
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -53,6 +47,8 @@ namespace GunaProjekt
 
         private void dashboard_Load(object sender, EventArgs e)
         {
+
+                label1.Text = "Ahoj " + loginin.name + "!";
             
 
         }
@@ -82,10 +78,7 @@ namespace GunaProjekt
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var workflowform = new Workflow();
-            workflowform.Closed += (s, args) => this.Close();
-            workflowform.Show();
+
         }
 
         private void dashboard_EnabledChanged(object sender, EventArgs e)
@@ -121,25 +114,28 @@ namespace GunaProjekt
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var ronnieform = new Ronnie();
-            ronnieform.Closed += (s, args) => this.Close();
-            ronnieform.Show();
+            main_dashboard.Self.Hide();
+            var form = new teachers_dashboard();
+            form.Closed += (s, args) => this.Close();
+            form.Show();
         }
 
         private void guna2CirclePictureBox4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var adamform = new Adam();
-            adamform.Closed += (s, args) => this.Close();
-            adamform.Show();
+            main_dashboard.Self.Hide();
+            var form = new teachers_dashboard();
+            form.Closed += (s, args) => this.Close();
+            form.Show();
         }
 
         private void guna2CirclePictureBox2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var tomasform = new Tomas();
-            tomasform.Closed += (s, args) => this.Close();
-            tomasform.Show();
+            main_dashboard.Self.Hide();
+            var form = new teachers_dashboard();
+            form.Closed += (s, args) => this.Close();
+            form.Show();
         }
 
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
@@ -231,6 +227,11 @@ namespace GunaProjekt
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
         {
 
         }

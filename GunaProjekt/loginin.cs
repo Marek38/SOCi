@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.CompilerServices;
 using MySql.Data.MySqlClient;
+using System.Xml.Linq;
 
 namespace GunaProjekt
 {
@@ -46,7 +47,7 @@ namespace GunaProjekt
         }
         static string constrig = ("Data Source=localhost;port=3306;username=root;password=");
         static MySqlConnection con = new MySqlConnection(constrig);
-
+        public static string name = "";
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             try
@@ -75,6 +76,7 @@ namespace GunaProjekt
                         {
                             //MessageBox.Show("Login Successfull...", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //userFullname = sdr["u_name"].ToString();
+                            name = guna2TextBox1.Text;
                             this.Hide();
                             var Dashboardform = new main_dashboard();
                             Dashboardform.Closed += (s, args) => this.Close();

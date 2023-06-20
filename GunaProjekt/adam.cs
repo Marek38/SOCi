@@ -38,7 +38,7 @@ namespace GunaProjekt
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var tomasdform = new Tomas();
+            var tomasdform = new teachers_dashboard();
             tomasdform.Closed += (s, args) => this.Close();
             tomasdform.Show();
         }

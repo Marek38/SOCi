@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using System.Net.Mail;
+using System.Net;
 
 namespace GunaProjekt
 {
@@ -164,18 +166,31 @@ namespace GunaProjekt
                                             MySqlCommand cmmd = new MySqlCommand(vklad_query, conn);
                                             MySqlDataReader sdrrrr = cmmd.ExecuteReader();
                                             sdrrrr.Close();
+
+                                            MailMessage mail = new MailMessage("marek.spotify.rzeszoto@gmail.com", guna2TextBox6.Text, "Vitaj u nás!", "Gratulujem práve si urobil tvoj prvý krok k dokonalej SOČ, nestracaj odhodlanie a začni využívať služby aplikácie SOČi už dnes!");
+                                            using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                                            {
+                                                smtp.UseDefaultCredentials = false;
+                                                smtp.Credentials = new NetworkCredential("marek.spotify.rzeszoto@gmail.com", "lygbkwyxrnesbdma");
+                                                smtp.EnableSsl = true;
+                                                smtp.Send(mail);
+                                            }
+                                            this.Hide();
+                                            var logininform = new loginin();
+                                            logininform.Closed += (s, args) => this.Close();
+                                            logininform.Show();
                                         }
                                         else
                                         {
                                             
-                                            MessageBox.Show("zle ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            MessageBox.Show("Skuste to znovu ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         }
                                     }
                                     
                                     else
                                     {
                                         
-                                        MessageBox.Show("cele zle ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        MessageBox.Show("Skus to este raz prosim ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
                                 }
                             }

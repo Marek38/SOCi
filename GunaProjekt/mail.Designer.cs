@@ -361,8 +361,8 @@
             this.guna2GradientButton6.Name = "guna2GradientButton6";
             this.guna2GradientButton6.Size = new System.Drawing.Size(672, 35);
             this.guna2GradientButton6.TabIndex = 13;
-            this.guna2GradientButton6.Text = "Zdravím Marek, v prípade otázok neváhaj použiť chat alebo videohovor";
             this.guna2GradientButton6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2GradientButton6.Click += new System.EventHandler(this.guna2GradientButton6_Click);
             // 
             // guna2GradientButton5
             // 

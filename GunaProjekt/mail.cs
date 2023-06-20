@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 
 namespace GunaProjekt
@@ -28,6 +29,7 @@ namespace GunaProjekt
 
         private void Mail_Load(object sender, EventArgs e)
         {
+            guna2GradientButton6.Text = "Zdravím " + loginin.name + ", v prípade otázok neváhaj použiť chat alebo videohovor";
             if (string.IsNullOrEmpty(guna2TextBox2.Text))
             {
                 guna2GradientButton7.Visible = false;
@@ -224,6 +226,11 @@ namespace GunaProjekt
         {
             string url = "https://meet.google.com/ifb-beex-nbu"; 
             System.Diagnostics.Process.Start(url);
+        }
+
+        private void guna2GradientButton6_Click(object sender, EventArgs e)
+        {
+
         }
     }
    
