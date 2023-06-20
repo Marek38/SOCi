@@ -76,7 +76,7 @@ namespace GunaProjekt
                             //MessageBox.Show("Login Successfull...", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //userFullname = sdr["u_name"].ToString();
                             this.Hide();
-                            var Dashboardform = new Dashboard();
+                            var Dashboardform = new main_dashboard();
                             Dashboardform.Closed += (s, args) => this.Close();
                             Dashboardform.Show();
                         }

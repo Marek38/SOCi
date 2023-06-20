@@ -56,13 +56,28 @@ namespace GunaProjekt
             
 
         }
+        public static Form activeform = null;
+        public void openchildFrom(Form childForm)
+        {
+            if (activeform != null)
+            {
+                activeform.Close();
+            }
+            activeform = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            mainpanel.BorderRadius = 10;
+            mainpanel.Controls.Add(childForm);
+            mainpanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var mailflowform = new Mail();
-            mailflowform.Closed += (s, args) => this.Close();
-            mailflowform.Show();
+            openchildFrom(new Mail());
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -213,6 +228,11 @@ namespace GunaProjekt
         private void guna2Button6_Click(object sender, EventArgs e)
         {
             this.Close();  
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

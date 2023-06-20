@@ -169,6 +169,12 @@
     </Compile>
     <Compile Include="guna2CheckBox.cs" />
     <Compile Include="Guna\UI2\WinForms\guna2CheckBox.cs" />
+    <Compile Include="main_dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main_dashboard.Designer.cs">
+      <DependentUpon>main_dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="ronnie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="adam.resx">
       <DependentUpon>adam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main_dashboard.resx">
+      <DependentUpon>main_dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ronnie.resx">
       <DependentUpon>ronnie.cs</DependentUpon>
