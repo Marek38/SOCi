@@ -113,29 +113,17 @@ namespace GunaProjekt
 
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            main_dashboard.Self.Hide();
-            var form = new teachers_dashboard();
-            form.Closed += (s, args) => this.Close();
-            form.Show();
+
         }
 
         private void guna2CirclePictureBox4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            main_dashboard.Self.Hide();
-            var form = new teachers_dashboard();
-            form.Closed += (s, args) => this.Close();
-            form.Show();
+
         }
 
         private void guna2CirclePictureBox2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            main_dashboard.Self.Hide();
-            var form = new teachers_dashboard();
-            form.Closed += (s, args) => this.Close();
-            form.Show();
+
         }
 
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)

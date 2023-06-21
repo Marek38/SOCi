@@ -51,7 +51,6 @@
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2TaskBarProgress1 = new Guna.UI2.WinForms.Guna2TaskBarProgress(this.components);
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
@@ -59,6 +58,7 @@
             this.guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.mainpanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
@@ -368,24 +368,6 @@
             this.guna2GradientPanel4.Size = new System.Drawing.Size(225, 204);
             this.guna2GradientPanel4.TabIndex = 19;
             // 
-            // guna2CircleProgressBar1
-            // 
-            this.guna2CircleProgressBar1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleProgressBar1.FillColor = System.Drawing.Color.White;
-            this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2CircleProgressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(46, 50);
-            this.guna2CircleProgressBar1.Minimum = 0;
-            this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
-            this.guna2CircleProgressBar1.ProgressColor = System.Drawing.Color.DarkOrange;
-            this.guna2CircleProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(139, 139);
-            this.guna2CircleProgressBar1.TabIndex = 6;
-            this.guna2CircleProgressBar1.Text = "guna2CircleProgressBar1";
-            this.guna2CircleProgressBar1.Value = 72;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -444,6 +426,27 @@
             this.guna2PictureBox2.TabIndex = 14;
             this.guna2PictureBox2.TabStop = false;
             // 
+            // guna2CircleProgressBar1
+            // 
+            this.guna2CircleProgressBar1.AutoScroll = true;
+            this.guna2CircleProgressBar1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleProgressBar1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.Navy;
+            this.guna2CircleProgressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(45, 52);
+            this.guna2CircleProgressBar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2CircleProgressBar1.Minimum = 0;
+            this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
+            this.guna2CircleProgressBar1.ProgressColor = System.Drawing.Color.DarkOrange;
+            this.guna2CircleProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleProgressBar1.ShowText = true;
+            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(132, 132);
+            this.guna2CircleProgressBar1.TabIndex = 8;
+            this.guna2CircleProgressBar1.Text = "72%";
+            this.guna2CircleProgressBar1.Value = 72;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -490,7 +493,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
@@ -510,5 +512,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2Panel mainpanel;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
     }
 }

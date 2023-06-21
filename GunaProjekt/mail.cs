@@ -202,7 +202,7 @@ namespace GunaProjekt
 
         private void guna2GradientButton9_Click(object sender, EventArgs e)
         {
-
+            
             if (!string.IsNullOrEmpty(guna2TextBox2.Text))
             {
                 guna2GradientButton7.Visible = true;

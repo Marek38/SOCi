@@ -73,5 +73,39 @@ namespace GunaProjekt
         {
             openchildFrom(new Dashboard());
         }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            openchildFrom(new Adam());
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            openchildFrom(new Ronnie());
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            openchildFrom(new Zajdo());
+        }
+
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+            string url = "http://www.spsknm.sk/ssknm/";
+            System.Diagnostics.Process.Start(url);
+        }
+
+        private void guna2Button11_Click(object sender, EventArgs e)
+        {
+            string url = "https://soc.spsit.sk/prihlasenie";
+            System.Diagnostics.Process.Start(url);
+        }
+
+        private void guna2Button12_Click(object sender, EventArgs e)
+        {
+        
+            string url = "https://spsknm.edupage.org/";
+            System.Diagnostics.Process.Start(url);
+        }
     }
 }

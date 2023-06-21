@@ -60,6 +60,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.guna2GradientCircleButton1 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label10 = new System.Windows.Forms.Label();
             this.guna2CheckBox4 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2CheckBox3 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -102,6 +103,7 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(837, 611);
             this.guna2Panel3.TabIndex = 23;
+            this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
             // 
             // label3
             // 
@@ -112,6 +114,7 @@
             this.label3.Size = new System.Drawing.Size(537, 84);
             this.label3.TabIndex = 22;
             this.label3.Text = resources.GetString("label3.Text");
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -259,6 +262,7 @@
             this.guna2VProgressBar15.Text = "guna2VProgressBar15";
             this.guna2VProgressBar15.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2VProgressBar15.Value = 43;
+            this.guna2VProgressBar15.ValueChanged += new System.EventHandler(this.guna2VProgressBar15_ValueChanged);
             // 
             // guna2VProgressBar6
             // 
@@ -459,11 +463,13 @@
             this.guna2GradientCircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2GradientCircleButton1.Size = new System.Drawing.Size(75, 75);
             this.guna2GradientCircleButton1.TabIndex = 0;
+            this.guna2GradientCircleButton1.Click += new System.EventHandler(this.guna2GradientCircleButton1_Click);
             // 
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.AutoScroll = true;
             this.guna2GradientPanel1.BorderRadius = 20;
+            this.guna2GradientPanel1.Controls.Add(this.label10);
             this.guna2GradientPanel1.Controls.Add(this.guna2CheckBox4);
             this.guna2GradientPanel1.Controls.Add(this.guna2CheckBox3);
             this.guna2GradientPanel1.Controls.Add(this.guna2CheckBox1);
@@ -476,6 +482,19 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(814, 242);
             this.guna2GradientPanel1.TabIndex = 18;
+            this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.ForeColor = System.Drawing.Color.Navy;
+            this.label10.Location = new System.Drawing.Point(286, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(220, 30);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Hodnotenie projektu";
             // 
             // guna2CheckBox4
             // 
@@ -573,9 +592,8 @@
             this.label1.ForeColor = System.Drawing.Color.Navy;
             this.label1.Location = new System.Drawing.Point(304, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 30);
+            this.label1.Size = new System.Drawing.Size(0, 30);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Hodnotenie";
             // 
             // guna2GradientPanel4
             // 
@@ -633,6 +651,7 @@
             this.Name = "Workflow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Workflow_Load);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2GradientPanel2.ResumeLayout(false);
@@ -687,5 +706,6 @@
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox2;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox4;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox3;
+        private System.Windows.Forms.Label label10;
     }
 }

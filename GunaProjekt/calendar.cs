@@ -23,6 +23,7 @@ namespace GunaProjekt
         public Calendar()
         {
             InitializeComponent();
+
         }
         static string constrig = ("Data Source=localhost;port=3306;username=root;password=");
         static MySqlConnection conn = new MySqlConnection(constrig);
@@ -36,7 +37,7 @@ namespace GunaProjekt
             MySqlConnection conn = new MySqlConnection(constrig);
 
 
-           
+
         }
 
         public string GetDataFromDatabase()
@@ -227,20 +228,18 @@ namespace GunaProjekt
 
         }
 
-        private void Calendar_Load_1(object sender, EventArgs e)
+        
+        private void LoadTasksFromDatabase()
         {
+
             conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT u_task FROM _sample.soci_task; ", conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                int y = 43;
-                while (reader.Read())
-                {
+            MySqlCommand cmd = new MySqlCommand("SELECT u_task FROM _sample.soci_task; ", conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            int y = 43;
 
+            while (reader.Read())
+            {
                 string taskName = reader.GetString(0);
-                    //guna2CheckBox2.Text = taskName;
-
-                //string taskName2 = reader.GetString(1);
-                //guna2CheckBox6.Text = taskName2;
 
                 Guna2CheckBox box = new Guna2CheckBox();
                 box.Text = taskName;
@@ -249,35 +248,46 @@ namespace GunaProjekt
                 box.AutoSize = true;
                 guna2GradientPanel3.Controls.Add(box);
                 box.BringToFront();
+                
 
                 Font font = new Font("Segoe UI Semibold", 15.75f, FontStyle.Bold);
                 box.Font = font;
                 box.ForeColor = Color.MidnightBlue;
-                //box.TabStop = true;
-                //box.TabIndex = 80;
-                //Controls.Add(box);
-
-                //string taskName3 = reader.GetString(2);
-                //guna2CheckBox4.Text = taskName3;
                 y += 35;
-                
-                //if (box.Checked)
-                //{
-                  //  string insertQuery = "INSERT INTO _sample.soci_task(u_checked) VALUES('1')";
-                  //  MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
-                   // insertCmd.ExecuteNonQuery();
-                //}
-                //else{
-                  //  string insertQuery = "INSERT INTO _sample.soci_task(u_checked) VALUES('0')";
-                   // MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
-                    //insertCmd.ExecuteNonQuery();
-                //}
 
                
+
+                    
+                    
+
+                
             }
+
             conn.Close();
         }
-   
+        private void Box_CheckedChanged(object sender, EventArgs e)
+        {
+            Guna2CheckBox box = (Guna2CheckBox)sender;
+            if (box.Checked)
+            {
+                conn.Open();
+                // Ak je CheckBox zaškrtnutý (hodnota Checked je true)
+                // Tu môžete vykonať akcie na spracovanie zaškrtnutej úlohy
+                // Napríklad získanie názvu úlohy pomocou box.Text
+                string updateQuery = "UPDATE _sample.soci_task SET u_checked = '1' WHERE u_task =  '" + box.Text + "';" ;
+                MySqlCommand updateCmd = new MySqlCommand(updateQuery, conn);
+                updateCmd.Parameters.AddWithValue("TaskCheckedName", box.Text);
+                updateCmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+        }
+
+        private void Calendar_Load_1(object sender, EventArgs e)
+        {
+            LoadTasksFromDatabase();
+        }
+
 
         private void guna2CheckBox1_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -295,6 +305,7 @@ namespace GunaProjekt
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
+            //guna2GradientPanel3.BackColor = Color.Black;
             conn.Open();
             MySqlCommand cmd = new MySqlCommand("SELECT u_task FROM _sample.soci_task; ", conn);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -303,6 +314,7 @@ namespace GunaProjekt
             {
 
                 string taskName = reader.GetString(0);
+
 
                 Guna2CheckBox box = new Guna2CheckBox();
                 box.Text = taskName;
@@ -317,7 +329,7 @@ namespace GunaProjekt
                 box.ForeColor = Color.MidnightBlue;
                 y += 35;
 
-
+                
             }
             conn.Close();
         }
@@ -336,8 +348,16 @@ namespace GunaProjekt
         {
             this.Close();
         }
+
+        private void guna2HScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
-
-
 }
 
